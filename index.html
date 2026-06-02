@@ -3,94 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Harshit Srivastav | Portfolio</title>
+  <link rel="stylesheet" href="style2.css" />
 </head>
 <body>
+  <div id="progressBar"></div>
 
   <header class="header">
     <div class="container">
-      <h1 class="logo">Your Name</h1>
+      <h1 class="logo">Harshit Srivastav</h1>
+      <button class="menu-toggle" id="menuToggle">☰</button>
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><button id="themeToggle" class="theme-btn">🌙</button></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero reveal">
     <div class="container">
-      <h2>Hello, I'm HARSHIT SRIVASTAV</h2>
-      <p>A BTech student passionate about web development and building websites.</p>
-      <p>Currrently I am in IMSEC pursuing BTech in Computer Science.</p>
+      <h2>Hello, I'm <span class="highlight">HARSHIT SRIVASTAV</span></h2>
+      <p id="typing"></p>
+      <p>Currently I am in IMSEC pursuing BTech in Computer Science.</p>
       <a href="#projects" class="btn">View My Work</a>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section reveal">
     <div class="container">
       <h2>About Me</h2>
-      <p>
-        I am a student with an interest in front-end development, problem solving, and creating simple user-friendly web interfaces.
-      </p>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="education">Education</button>
+        <button class="tab-btn" data-tab="interest">Interests</button>
+        <button class="tab-btn" data-tab="goal">Goal</button>
+      </div>
+
+      <div class="tab-content active" id="education">
+        <p>I am a BTech Computer Science student at IMSEC.</p>
+      </div>
+      <div class="tab-content" id="interest">
+        <p>I enjoy front-end development, Java programming, and problem solving.</p>
+      </div>
+      <div class="tab-content" id="goal">
+        <p>My goal is to become a skilled software developer and build useful web applications.</p>
+      </div>
     </div>
   </section>
 
-  <section id="projects" class="section light">
+  <section id="projects" class="section light reveal">
     <div class="container">
       <h2>Projects</h2>
 
-      <div class="project-card">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="java">Java</button>
+        <button class="filter-btn" data-filter="game">Game</button>
+      </div>
+
+      <div class="project-card" data-category="web">
         <h3>Personal Portfolio Website</h3>
-        <p>Built a personal portfolio website using HTML and CSS to showcase projects, skills, and achievements.</p>
+        <p>Built a personal portfolio website using HTML and CSS.</p>
+        <button class="details-btn" data-title="Personal Portfolio Website" data-desc="This project showcases my profile, skills, and work in a responsive layout.">Details</button>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-category="web">
         <h3>Sikkim Tourism Website</h3>
-        <p>Created a responsive interface that works smoothly across desktop, tablet, and mobile screens.</p>
-        <p>This was my project in SIH hackathon. It was a group project with 6 people in my group.</p>
+        <p>Created a responsive interface for tourism information.</p>
+        <button class="details-btn" data-title="Sikkim Tourism Website" data-desc="This was my SIH hackathon group project focused on tourism and user-friendly design.">Details</button>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-category="game">
         <h3>Gaming Website</h3>
-        <p>Developed a gaming website which contains games like tic-tac-toe, stone-paper-scissor and ludo.</p>
-        <p>Working on to more games.</p>
+        <p>Contains tic-tac-toe, stone-paper-scissor and ludo.</p>
+        <button class="details-btn" data-title="Gaming Website" data-desc="This website includes multiple browser games and I am still adding more games to it.">Details</button>
+      </div>
+
+      <div class="project-card" data-category="java">
+        <h3>Java Console Programs</h3>
+        <p>Practice programs based on Java basics and OOP concepts.</p>
+        <button class="details-btn" data-title="Java Console Programs" data-desc="Includes Scanner input programs, OOP examples, and beginner-friendly Java logic building.">Details</button>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="section">
+  <section id="skills" class="section reveal">
     <div class="container">
       <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Java</li>
-        <li>Python</li>
-        <li>C</li>
-      </ul>
+
+      <div class="skill">
+        <p>HTML</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>CSS</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>JavaScript</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>Java</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section light">
+  <section id="contact" class="section light reveal">
     <div class="container">
       <h2>Contact</h2>
-      <p>Email: harshitsrivastav874@email.com</p>
-      <!-- <p>LinkedIn: linkedin.com/in/yourprofile</p>
-      <p>GitHub: github.com/yourusername</p> -->
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" />
+        <input type="email" id="email" placeholder="Your Email" />
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn">Send</button>
+        <p id="formMessage"></p>
+      </form>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Your Name. All rights reserved.</p>
+      <p>© 2026 Harshit Srivastav. All rights reserved.</p>
     </div>
   </footer>
 
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <script src="script2.js"></script>
 </body>
 </html>
